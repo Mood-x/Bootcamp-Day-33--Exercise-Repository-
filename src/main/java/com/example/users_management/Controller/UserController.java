@@ -73,12 +73,12 @@ public class UserController {
     }
 
     @GetMapping("/ages/{age}")
-    public ResponseEntity getUsersBySpecificRole(@PathVariable int age){
+    public ResponseEntity getUsersBySpecificAgeOrAbove(@PathVariable int age){
         return ResponseEntity.status(200).body(userService.getUsersBySpecificAgeOrAbove(age)); 
     }
 
-    @GetMapping("/search/{username}/{password}")
-    public ResponseEntity getUsersBySpecificRole(@PathVariable String username, @PathVariable String password){
+    @GetMapping("/search/{username}/{passwod}")
+    public ResponseEntity getUserByUsernameAndPassword(@PathVariable String username, @PathVariable String password){
         return ResponseEntity.status(200).body(userService.getUserByUsernameAndPassword(username, password)); 
     }
 
